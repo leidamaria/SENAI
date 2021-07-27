@@ -81,16 +81,24 @@ int calculaHexa (int num)
     }
     if (resul<10)
         { printf ("\nHexa equivalente: %d", resul);}
-    else
+    else if (resul<16) 
         {      
             char r = converteLetra(resul);
-            printf ("%c", r);n
-    for (int x = i - 1; x >= 0; x--)
+            printf ("%c", r);
+        }
+    
     {
-      char l = converteLetra(nr_hexa[x]);
-      printf ("%c", l);
+    for (int x = i - 1; x >= 0; x--)
+        {
+            if(nr_hexa[x]>9)
+              {
+                char l = converteLetra(nr_hexa[x]);
+                printf ("%c", l);
+                
+              }else
+              {printf ("%d", nr_hexa[x]);}
+        }
     }
-
 }
 
 char converteLetra(int num)
@@ -123,4 +131,5 @@ char converteLetra(int num)
         }
     return(letra);
 }
+
 
